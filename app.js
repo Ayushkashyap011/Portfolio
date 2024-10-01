@@ -23,3 +23,21 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+// certificate
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const items = document.querySelectorAll('.carousel-item');
+    items[currentIndex].classList.remove('active');
+
+    currentIndex = (currentIndex + direction + items.length) % items.length;
+
+    items[currentIndex].classList.add('active');
+
+    // Update the transform property to show the current item
+    const carouselInner = document.querySelector('.carousel-inner');
+    const offset = -currentIndex * 100; // Move to the current index
+    carouselInner.style.transform = `translateX(${offset}%)`;
+}
+
+

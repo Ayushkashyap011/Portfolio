@@ -13,7 +13,7 @@ a {
 	text-decoration: none;
 }
 .container {
-	min-height: 100vh;
+	min-height: 50vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -701,3 +701,72 @@ p {
 	}
 }
 /* End  Media Query For Desktop */
+
+/* Carousel Styles */
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 80%; /* Increased width */
+    margin: auto;
+    overflow: hidden;
+    perspective: 1200px; /* Add perspective for 3D effect */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d; /* 3D transformation */
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    transition: transform 0.8s ease;
+    transform-origin: center center;
+    transform-style: preserve-3d; /* Ensure 3D perspective is applied */
+}
+
+.carousel img {
+    width: 70%; /* Increase the size of the images */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add some shadow */
+    transform: translateZ(0px); /* Start with no 3D translation */
+}
+
+/* Buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Additional Styles for 3D Curve Rotation */
+.carousel-item.active img {
+    transform: translateZ(100px) rotateY(0deg); /* Focused item comes forward */
+}
+
+.carousel-item:nth-child(2) img {
+    transform: translateZ(-150px) rotateY(-15deg); /* Second item curves inward */
+}
+
+.carousel-item:nth-child(3) img {
+    transform: translateZ(-150px) rotateY(15deg); /* Third item curves inward */
+}
+
