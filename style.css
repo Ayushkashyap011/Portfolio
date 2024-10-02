@@ -770,3 +770,8 @@ button {
     transform: translateZ(-150px) rotateY(15deg); /* Third item curves inward */
 }
 
+.certificates{
+	min-height: 50vh;
+}
+
+
